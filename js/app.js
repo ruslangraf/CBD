@@ -1183,7 +1183,7 @@ function inputs_init(inputs) {
 					//'+38(999) 999 9999'
 					//'+375(99)999-99-99'
 					input.classList.add('_mask');
-					Inputmask("+375 (99) 9999999", {
+					Inputmask("+31 (20) 9999999", {
 						//"placeholder": '',
 						clearIncomplete: true,
 						clearMaskOnLostFocus: true,
@@ -1337,5 +1337,30 @@ for (let anchor of anchors) {
 	})
 }
 
+//добавление класса по url
+(function () {
+	var current = location.pathname.split('/')[1];
+	if (current === "") return;
+	var menuItems = document.querySelectorAll('.menu__item a');
+	for (var i = 0, len = menuItems.length; i < len; i++) {
+		if (menuItems[i].getAttribute("href").indexOf(current) !== -1) {
+			menuItems[i].classList.toggle("_active");
+		}
+	}
+})();
 //================================================================================================================================================
+// "use strict"
+// var form = document.querySelector('form');
+// form.addEventListener('submit', function (event) {
+// 	event.preventDefault();
+// 	var formaction = '?';
+// 	alert(formaction);
+// });
+let out = document.querySelector('.out1')
+for (i = 0; i < 5; i++) {
+	for (let k = i; k < 5; k++) {
+		out.innerHTML += `*`
+	}
+	out.innerHTML += `<br>`
+}
 
